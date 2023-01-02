@@ -7,7 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-const Navbar = () => {
+const Navbar = ({setIsAdminVisible}) => {
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -39,7 +39,10 @@ const Navbar = () => {
             </IconButton>
           </Box>
           <Box sx={{flexGrow:1, display:{xs: "none", md:"flex"}}}>
-            <Button sx={{my:2, color:"white", display:"block"}}>Admin</Button>
+            <Button 
+            sx={{my:2, color:"white", display:"block"}}
+            onClick={() => {setIsAdminVisible(true)}}
+            >Admin</Button>
             <Button sx={{my:2, color:"white", display:"block"}}>Shop</Button>
           </Box>
           <Box sx={{flexGrow:0}}>
